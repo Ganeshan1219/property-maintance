@@ -4,7 +4,9 @@ import axios from 'axios'
 const AuthContext = createContext(null)
 
 // Configure axios interceptor
-const api = axios.create()
+const api = axios.create({
+  baseURL: 'https://property-maintance-api.onrender.com'
+})
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
